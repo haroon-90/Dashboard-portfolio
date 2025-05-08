@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is just a portfolio dashboard designed and developed for practice only">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="grid">
+        <nav>
+            <ul>
+                <li id="home">Home</li>
+                <li id="skills">Skills</li>
+                <li id="contact">Contact</li>
+                <li id="about">About us</li>
+            </ul>
+        </nav>
+        <aside>
+            <h1>Portfolio</h1>
+            <h3>Projects</h3>
+            <ul>
+                <li>OneNest</li>
+                <li>BoloToh</li>
+                <li>QuickQuiz</li>
+                <li>Portfolio</li>
+                <li>Taskify</li>
+                <li>Weather App</li>
+                <li>E-Commerce</li>
+            </ul>
+        </aside>
+        <main></main>
+        <footer>&copy; M. Haroon Nawaz | All right reserved</footer>
+    </div>
+    <script>
+        const main = document.querySelector('main');
+
+        // Helper function for smooth fade-in animation
+        // function animateMainContent(newHTML) {
+        //     main.style.opacity = 0;
+        //     setTimeout(() => {
+        //         main.innerHTML = newHTML;
+        //         main.style.opacity = 0;
+        //         setTimeout(() => {
+        //             main.style.transition = 'opacity 0.4s';
+        //             main.style.opacity = 1;
+        //         }, 10);
+        //     }, 200);
+        // }
+        function animateMainContent(newHTML) {
+            main.style.transform = 'rotateY(180deg)';
+            setTimeout(() => {
+            main.innerHTML = newHTML;
+            main.style.transition = ' transform 1s';
+            main.style.transform = 'rotateY(0deg)';
+            }, 300);
+        }
+
+        window.onload = main_home;
+        document.querySelector('#home').addEventListener('click', main_home);
+
+        function main_home() {
+            animateMainContent(`<div class="content profile">
+                <img class='profilepic' src="profile2.jpg" alt="profile pic">
+                <div>
+                    <h2>M. Haroon Nawaz</h2>
+                    <span>frontend Developer</span>
+                </div>
+            </div>
+            <div class="content about">
+                <span>
+                    Hello! I'm a passionate web developer with a strong foundation in both design and code. I specialize
+                    in creating intuitive, responsive websites and applications that provide exceptional user
+                    experiences.
+                </span>
+            </div>
+            <div class="content contact">
+                <span>Contact me at:</span>
+                <span>Email: roliaharoon2@gmail.com</span>
+                <span>Phone: +92 300 9530640</span>
+            </div>
+            <div class="content location">
+                <span>Location:</span>
+                <span>Kotla Arab Ali Khan,</span>
+                <span>punjab, Pakistan</span>
+            </div>`);
+        }
+
+        document.querySelector('#skills').addEventListener('click', () => {
+            animateMainContent(`
+                <div class="content skill_heading">
+                    <h1>Skills</h1>
+                </div>
+                <div class="content skills1">
+                    <h2>Frontend Skills</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Tailwindcss</li>
+                    </ul>
+                </div>
+                <div class="content skills2">
+                    <h2>Backend Skills</h2>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>MongoDB</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                    </ul>
+                </div>`);
+        });
+
+        document.querySelector('#contact').addEventListener('click', () => {
+            animateMainContent('<div class="content contact_heading"><span>Contact Information</span></div><div class="content email"><span>Email: roliaharoon2@gmail.com</span></div><div class="content phone"><span>Phone: +92 300 9530640</span></div>');
+        });
+
+        document.querySelector('#about').addEventListener('click', () => {
+            animateMainContent('<div class="content about_heading"><span>About us</span></div><div class="content aboutus"><span>Hello! I amm a passionate web developer with a strong foundation in both design and code. I specialize in creating intuitive, responsive websites and applications that provide exceptional user experiences. With expertise in React, Tailwind CSS, and modern JavaScript, I bring creativity and technical precision to every project. I love collaborating with teams to build products that solve real-world problems.</span></div>');
+        });
+
+        const projects = [
+            {
+                id: 1,
+                title: 'OneNest | All-in-one digital hub',
+                description: 'OneNest is your all-in-one digital hub designed for simplicity, speed, and productivity. Whether you have a student, developer, or productivity geek, OneNest brings together the tools you need — all in one place.',
+                image: 'onenest.png',
+                tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'AI API'],
+                demoLink: 'https://haroon-90.github.io/OneNest/',
+                codeLink: 'https://github.com/haroon-90/OneNest',
+            },
+            {
+                id: 2,
+                title: 'BoloToh | AI Chatbot',
+                description: 'BoloToh is a fun and creative web app where your words turn into magic! Just share a few things about yourself — like your name, age, favorite color, or your mood — and BoloToh will create a personalized Poem, Motivation, Roast, Story, Introduction, AI Advice',
+                image: 'bolotoh.png',
+                tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'AI API'],
+                demoLink: 'https://haroon-90.github.io/BoloToh/',
+                codeLink: 'https://github.com/haroon-90/BoloToh',
+            },
+            {
+                id: 3,
+                title: 'QuickQuiz | AI Quiz Generator',
+                description: 'QuickQuiz is an innovative AI Quiz Generator that allows users to create customized multiple-choice quizzes on any topic. Simply input a topic, and the AI will generate a quiz with questions and answers. Users can then take the quiz and receive instant feedback upon submission.',
+                image: 'quickquiz.png',
+                tags: ['HTML', 'CSS', 'JavaScript', 'AI API'],
+                demoLink: 'https://haroon-90.github.io/QuickQuiz/',
+                codeLink: 'https://github.com/haroon-90/QuickQuiz',
+            },
+            {
+                id: 4,
+                title: 'Portfolio Website',
+                description: 'A responsive portfolio website built with React and Tailwind CSS. Features smooth scrolling, responsive design, and contact form functionality.',
+                image: 'portfolio.png',
+                tags: ['HTML', 'CSS', 'JavaScript'],
+                demoLink: 'https://haroon90.w3spaces.com/',
+                codeLink: 'https://github.com/haroon-90/Portfolio',
+            },
+            {
+                id: 5,
+                title: 'Taskify | TO-DO List App',
+                description: 'A React-based To-Do List application that allows users to add, edit, mark as complete, and delete tasks. This project demonstrates fundamental React concepts and state management for creating interactive user interfaces.',
+                image: 'taskify.png',
+                tags: ['React', 'JavaScript', 'CSS', 'React', 'Tailwind CSS'],
+                demoLink: 'https://haroon-90.github.io/To-Do-React/',
+                codeLink: 'https://github.com/haroon-90/To-Do-React',
+            },
+            {
+                id: 6,
+                title: 'Weather App',
+                description: 'This is a sleek and responsive Weather App built using HTML, CSS, and JavaScript. It fetches weather data from an API based on user input, providing current weather conditions, temperature, and other relevant information. The design is fully responsive, ensuring a smooth user experience across all devices.',
+                image: 'weatherapp.png',
+                tags: ['HTML', 'CSS', 'JavaScript', 'weather API'],
+                demoLink: 'https://haroon-90.github.io/Weather-App/',
+                codeLink: 'https://github.com/haroon-90/Weather-App',
+            },
+            {
+                id: 7,
+                title: 'E-Commerce Website',
+                description: 'The Sweet Tooth Bakery website is a visually appealing, user-friendly frontend design created using HTML and CSS.This project showcases a sleek, modern design for a bakery, highlighting their delicious offerings in an attractive and organized layout.The website focuses on simplicity,elegance, and functionality, making it easy for visitors to browse the bakery products, learn about the bakery story, and get in touch.',
+                image: 'bakery.png',
+                tags: ['HTML', 'CSS', 'JavaScript'],
+                demoLink: 'https://haroon-90.github.io/Sweet-Tooth-Bakery/',
+                codeLink: 'https://github.com/haroon-90/Sweet-Tooth-Bakery',
+            },
+        ];
+
+        document.querySelectorAll('aside ul li').forEach((li, idx) => {
+            if (idx < projects.length) {
+                li.addEventListener('click', () => {
+                    const p = projects[idx];
+                    animateMainContent(`
+                        <div class="content project">
+                            <h2>${p.title}</h2>
+                            <img class='projectimg' src="${p.image}" alt="${p.title}">
+                            <p>${p.description}</p>
+                            <p><strong>Technologies Used:</strong> ${p.tags.join(' , ')}</p>
+                            <div style="display:flex; gap:1em; margin-top:1em;">
+                                <a href="${p.demoLink}" target="_blank">
+                                    <button style="padding:0.5em 1em;border:none;border-radius:5px;background:#4caf50;color:#fff;cursor:pointer;">Live Demo</button>
+                                </a>
+                                <a href="${p.codeLink}" target="_blank">
+                                    <button style="padding:0.5em 1em;border:none;border-radius:5px;background:#2196f3;color:#fff;cursor:pointer;">Source Code</button>
+                                </a>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+        });
+
+        main.style.transform = 'rotateY(0deg)';
+        main.style.transition = 'all 1s';
+    </script>
+</body>
+
+</html>
