@@ -271,6 +271,10 @@ footer:hover {
         padding: 1rem;
     }
 
+    .content{
+        max-width: 100%;
+    }
+
     .content.profile {
         flex-direction: column;
         align-items: center;
