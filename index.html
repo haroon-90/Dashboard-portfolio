@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is just a portfolio dashboard designed and developed for practice only">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <div class="grid">
         <nav>
@@ -15,6 +17,14 @@
                 <li id="skills">Skills</li>
                 <li id="contact">Contact</li>
                 <li id="about">About us</li>
+                <li id="theme"><select id="themeSelector">
+                        <option value="ocean">Ocean Blue</option>
+                        <option value="autumn">Autumn Vibes</option>
+                        <option value="green">Greeny Nature</option>
+                        <option value="purple">Purple Galaxy</option>
+                        <option value="dark">Dark Modern</option>
+                    </select>
+                </li>
             </ul>
         </nav>
         <aside>
@@ -51,9 +61,9 @@
         function animateMainContent(newHTML) {
             main.style.transform = 'rotateY(180deg)';
             setTimeout(() => {
-            main.innerHTML = newHTML;
-            main.style.transition = ' transform 1s';
-            main.style.transform = 'rotateY(0deg)';
+                main.innerHTML = newHTML;
+                main.style.transition = ' transform 1s';
+                main.style.transform = 'rotateY(0deg)';
             }, 300);
         }
 
@@ -214,6 +224,66 @@
 
         main.style.transform = 'rotateY(0deg)';
         main.style.transition = 'all 1s';
+        const themes = {
+            ocean: {
+                "--bg-black": "#001f3f",
+                "--bg-blue": "#0074D9",
+                "--bg-blue-hover": "#005fa3",
+                "--bg-blue-dark": "#004080",
+                "--bg-grid": "#7FDBFF",
+                "--bg-content": "#39CCCC",
+                "--text-white": "#ffffff",
+                "--nav-blue": "#001f3f"
+            },
+            autumn: {
+                "--bg-black": "#3E2723",
+                "--bg-blue": "#BF360C",
+                "--bg-blue-hover": "#D84315",
+                "--bg-blue-dark": "#4E342E",
+                "--bg-grid": "#FF7043",
+                "--bg-content": "#FFAB91",
+                "--text-white": "#fff3e0",
+                "--nav-blue": "#5D4037"
+            },
+            green: {
+                "--bg-black": "#1B5E20",
+                "--bg-blue": "#388E3C",
+                "--bg-blue-hover": "#2E7D32",
+                "--bg-blue-dark": "#1B5E20",
+                "--bg-grid": "#A5D6A7",
+                "--bg-content": "#66BB6A",
+                "--text-white": "#f1f8e9",
+                "--nav-blue": "#2E7D32"
+            },
+            purple: {
+                "--bg-black": "#2C003E",
+                "--bg-blue": "#7B1FA2",
+                "--bg-blue-hover": "#6A1B9A",
+                "--bg-blue-dark": "#4A148C",
+                "--bg-grid": "#CE93D8",
+                "--bg-content": "#BA68C8",
+                "--text-white": "#f3e5f5",
+                "--nav-blue": "#6A1B9A"
+            },
+            dark: {
+                "--bg-black": "#121212",
+                "--bg-blue": "#1E1E2F",
+                "--bg-blue-hover": "#27293D",
+                "--bg-blue-dark": "#20202F",
+                "--bg-grid": "#2D2D44",
+                "--bg-content": "#3A3A5C",
+                "--text-white": "#EAEAEA",
+                "--nav-blue": "#1E1E2F"
+            }
+        };
+
+        document.getElementById("themeSelector").addEventListener("change", function () {
+            const selectedTheme = themes[this.value];
+            for (const variable in selectedTheme) {
+                document.documentElement.style.setProperty(variable, selectedTheme[variable]);
+            }
+        });
+
     </script>
 </body>
 

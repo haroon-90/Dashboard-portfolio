@@ -1,3 +1,47 @@
+/* :root {
+    --bg-black: #000;
+    --bg-blue: #00f;
+    --bg-blue-hover: #0101c4;
+    --bg-blue-dark: #03039f;
+    --bg-grid: rgb(60, 125, 248);
+    --bg-content: hsl(224, 89%, 57%);
+    --text-white: #fff;
+    --nav-blue: #0000ff;
+} */
+
+:root {
+    --bg-black: #121212;
+    --bg-blue: #1E1E2F;
+    --bg-blue-hover: #27293D;
+    --bg-blue-dark: #20202F;
+    --bg-grid: #2D2D44;
+    --bg-content: #3A3A5C;
+    --text-white: #EAEAEA;
+    --nav-blue: #1E1E2F;
+}
+
+/* :root {
+    --bg-black: #2C003E;
+    --bg-blue: #7B1FA2;
+    --bg-blue-hover: #6A1B9A;
+    --bg-blue-dark: #4A148C;
+    --bg-grid: #CE93D8;
+    --bg-content: #BA68C8;
+    --text-white: #f3e5f5;
+    --nav-blue: #6A1B9A;
+} */
+
+/* :root {
+    --bg-black: #1B5E20;
+    --bg-blue: #388E3C;
+    --bg-blue-hover: #2E7D32;
+    --bg-blue-dark: #1B5E20;
+    --bg-grid: #A5D6A7;
+    --bg-content: #66BB6A;
+    --text-white: #f1f8e9;
+    --nav-blue: #2E7D32;
+} */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +49,11 @@
 }
 
 body {
-    background: #000;
+    background: var(--bg-black);
 }
 
 .grid {
-    background: rgb(60, 125, 248);
+    background: var(--bg-grid);
     height: auto;
     min-height: 92vh;
     width: 92vw;
@@ -27,8 +71,8 @@ body {
 
 nav {
     grid-area: nav;
-    background-color: #0000ff;
-    color: #fff;
+    background-color: var(--nav-blue);
+    color: var(--text-white);
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -38,8 +82,8 @@ nav {
 
 aside {
     grid-area: aside;
-    background-color: #00f;
-    color: #fff;
+    background-color: var(--bg-blue);
+    color: var(--text-white);
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -51,7 +95,7 @@ aside {
 
 main {
     grid-area: main;
-    background-color: #00f;
+    background-color: var(--bg-blue);
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -59,13 +103,13 @@ main {
     align-items: start;
     gap: 0.5em;
     flex-wrap: wrap;
-    color: #fff;
+    color: var(--text-white);
 }
 
 footer {
     grid-area: footer;
-    background-color: #00f;
-    color: #fff;
+    background-color: var(--bg-blue);
+    color: var(--text-white);
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -108,8 +152,8 @@ nav ul {
 }
 
 aside ul li {
-    background-color: #0101c4;
-    padding: 2px;
+    background-color: var(--bg-blue-hover);
+    padding: 4px;
     border-radius: 10px;
     width: 100%;
     text-align: center;
@@ -117,7 +161,7 @@ aside ul li {
 }
 
 aside ul li:hover {
-    background-color: #03039f;
+    background-color: var(--bg-blue-dark);
 }
 
 ul li {
@@ -137,8 +181,8 @@ ul li {
     gap: 0.5em;
     justify-content: center;
     align-items: center;
-    background: hsl(224, 89%, 57%);
-    color: #fff;
+    background: var(--bg-content);
+    color: var(--text-white);
 }
 
 .profile {
@@ -184,7 +228,7 @@ ul li {
 }
 
 .content:hover {
-    background-color: #0101c4;
+    background-color: var(--bg-blue-hover);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
 }
@@ -193,10 +237,10 @@ nav ul li:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: all 0.3s ease;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--text-white);
 }
 
-#theme {
+#theme{
     border-bottom: none;
 }
 
