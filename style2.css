@@ -271,8 +271,9 @@ footer:hover {
         padding: 1rem;
     }
 
-    .content{
+    .content {
         max-width: 100%;
+        max-height: 100%;
     }
 
     .content.profile {
@@ -310,8 +311,9 @@ footer:hover {
         padding: 2rem;
     }
 
-    .content{
+    .content {
         max-width: 100%;
+        max-height: 100%;
     }
 
     .projectimg {
